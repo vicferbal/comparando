@@ -1,0 +1,1 @@
+Ejercicio 9 .  Comparando instrucciones de JavaScript de == y ===
