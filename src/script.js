@@ -48,3 +48,23 @@ function saludar(nombre) {
 }
 
 console.log(saludar("Juan")); // "Hola, Juan!"
+
+// 12. ejemplos de pasar valores en una funcion o por referencia
+// por valor
+function modificar(numero) {
+    numero = 10; // Modificamos la copia
+}
+
+let x = 5;
+modificar(x);
+console.log(x); // Imprime 5, la variable original no cambió
+
+// por referencia
+
+function modificarObjeto(persona) {
+    persona.nombre = "Carlos"; // Modifica el objeto original
+}
+
+let persona = { nombre: "Ana" };
+modificarObjeto(persona);
+console.log(persona.nombre); // Imprime "Carlos"
