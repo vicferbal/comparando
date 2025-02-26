@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Coches</title>
+</head>
+<body>
+    <h1>Mapa de Alquiler de Coches</h1>
+    <script>
+        // Crear el mapa de coches
+        let coches = new Map();
+        
+        // Insertar 5 coches
+        coches.set("1-A", {marca: "Toyota", modelo: "Corolla", km: 50000, potencia: 110, motor: "Gasolina"});
+        coches.set("2-B", {marca: "Ford", modelo: "Focus", km: 60000, potencia: 120, motor: "Diésel"});
+        coches.set("1-C", {marca: "Honda", modelo: "Civic", km: 45000, potencia: 130, motor: "Híbrido"});
+        coches.set("3-A", {marca: "BMW", modelo: "Serie 3", km: 70000, potencia: 150, motor: "Gasolina"});
+        coches.set("2-A", {marca: "Audi", modelo: "A3", km: 55000, potencia: 140, motor: "Diésel"});
+        
+        // Mostrar los coches
+        document.write("<h2>Lista de coches:</h2>");
+        coches.forEach((datos, matricula) => {
+            document.write(`<p><strong>${matricula}:</strong> Marca: ${datos.marca}, Modelo: ${datos.modelo}, Km: ${datos.km}, Potencia: ${datos.potencia} CV, Motor: ${datos.motor}</p>`);
+        });
+        
+        // Comprobar si existen ciertos coches
+        document.write(`<p>¿Existe el coche con matrícula 1-C? ${coches.has("1-C") ? "Sí" : "No"}</p>`);
+        document.write(`<p>¿Existe el coche con matrícula 6-X? ${coches.has("6-X") ? "Sí" : "No"}</p>`);
+        
+        // Obtener y mostrar el coche con matrícula 2-A
+        if (coches.has("2-A")) {
+            let coche = coches.get("2-A");
+            document.write(`<p><strong>Datos del coche con matrícula 2-A:</strong> Marca: ${coche.marca}, Modelo: ${coche.modelo}, Km: ${coche.km}, Potencia: ${coche.potencia} CV, Motor: ${coche.motor}</p>`);
+        }
+        
+        // Borrar el coche con matrícula 3-A
+        coches.delete("3-A");
+        document.write("<p>Coche con matrícula 3-A eliminado.</p>");
+    </script>
+</body>
+</html>
