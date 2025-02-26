@@ -3,15 +3,15 @@
 <head>
     <!-- script interno-->
     <script> 
-        let p1 = { x: 1, y: 1 };
-        let p2 = { x: 2, y: 2 };
-        function distancia(p1, p2) {
+        let p1 = { x: 1, y: 0 };
+        let p2 = { x: 5, y: 0 };
+        function distancia(p1, p2 = {x:0 , y:0}) {
             let dx = p2.x - p1.x;
             let dy = p2.y - p1.y;
             return Math.sqrt(dx * dx + dy * dy);
         }
 
-        let resultado = distancia(p1, p2);
+        let resultado = distancia(p1,p2);
         console.log(resultado);
     </script>
 </head>
